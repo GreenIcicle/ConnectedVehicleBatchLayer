@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToModelConverterJob", "JsonToModelConverterJob\JsonToModelConverterJob.csproj", "{A92422C8-B37C-4A4E-ACB5-78A2BCD2E55B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToModelConverterJobTest", "JsonToModelConverterJobTest\JsonToModelConverterJobTest.csproj", "{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{A92422C8-B37C-4A4E-ACB5-78A2BCD2E55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A92422C8-B37C-4A4E-ACB5-78A2BCD2E55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A92422C8-B37C-4A4E-ACB5-78A2BCD2E55B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

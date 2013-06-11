@@ -1,4 +1,5 @@
 ﻿using Microsoft.Hadoop.MapReduce;
+using Microsoft.Hadoop.MapReduce.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,11 @@ using System.Threading.Tasks;
 
 namespace JsonToModelConverterJob
 {
-    class Program
+    public class JsonToModelMapper : JsonInMapperBase<SensorMessage>
     {
-        static void Main(string[] args)
+        public override void Map(SensorMessage sensorMessage, MapperContext context)
         {
-            var hadoop = Hadoop.Connect();
-            var result = hadoop.MapReduceJob.ExecuteJob<ConverterJob>();
-            Console.ReadLine();
+            //TODO
         }
     }
 }
