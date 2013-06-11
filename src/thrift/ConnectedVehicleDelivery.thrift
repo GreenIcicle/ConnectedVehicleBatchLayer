@@ -31,9 +31,20 @@ struct DeliveryStatus {
 	3: optional string additionalStatusInfo
 }
 
+struct Geolocation {
+	1: required double latitude,
+	2: required double longitude
+}
+
+struct Position {
+	1: required Timestamp timestamp,
+	2: required Geolocation geolocation
+}
+
 struct Delivery {
 	1: required Vehicle vehicle,
-	2: required list<DeliveryStatus> statusHistory 
+	2: required list<DeliveryStatus> statusHistory,
+	3: optional list<Position> positionHistory
 }
 
 
