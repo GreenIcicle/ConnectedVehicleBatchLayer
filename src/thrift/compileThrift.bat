@@ -1,0 +1,1 @@
+..\..\tools\thrift --gen csharp ./ConnectedVehicleDelivery.thrift
