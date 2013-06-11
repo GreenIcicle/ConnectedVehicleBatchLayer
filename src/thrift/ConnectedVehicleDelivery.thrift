@@ -10,20 +10,20 @@ namespace csharp Zuehlke.ConnectedVehicles
 typedef i64 Timestamp
 
 enum VehicleType {
+	OTHER = 0,		// Catchall for unexpected values
 	CAR,
 	VAN,
-	BIKE,
-	OTHER		// Catchall for unexpected values
+	BIKE
 }
 
 enum DeliveryStatusType {
+	OTHER = 0, 		// Catchall for unexpected values
 	START,
 	DRIVING,
 	REFUELLING,
 	STOP,
 	UNLOADING,
-	REPAIRING,
-	OTHER		// Catchall for unexpected values
+	REPAIRING	
 }
 
 // A data point recorded by the vehicle's sensors.
@@ -43,10 +43,12 @@ struct SensorData {
 
 // Describes a point in time when the status of a delivery changes - 
 // for example, when the delivery starts and ends.
+// In the case that the statusType is OTHER, the status
+// info is captured in the fallbackStatusInfo.
 struct DeliveryStatus {
 	1: required Timestamp timestamp,
 	2: required DeliveryStatusType statusType,
-	3: optional string additionalStatusInfo
+	3: optional string fallbackStatusInfo
 }
 
 // A geolocation. Duh.
@@ -84,5 +86,3 @@ struct Delivery {
 	6: optional string region,
 	7: optional list<Position> positionHistory
 }
-
-
