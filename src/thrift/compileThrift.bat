@@ -1,1 +1,3 @@
-..\..\tools\thrift --gen csharp ./ConnectedVehicleDelivery.thrift
+ECHO Compiling Thrift...
+..\..\tools\thrifty --gen csharp ./ConnectedVehicleDelivery.thrift
+ECHO Compiling Thrift done.
