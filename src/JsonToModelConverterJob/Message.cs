@@ -10,7 +10,7 @@ namespace JsonToModelConverterJob
     public class Message
     {
         [JsonProperty(PropertyName = "type")]
-        public string Type{get; set;}
+        public MessageType Type { get; set; }
 
         [JsonProperty(PropertyName = "info")]
         public string Info { get; set; }
@@ -19,7 +19,7 @@ namespace JsonToModelConverterJob
         public int DeliveryId { get; set; }
 
         [JsonProperty(PropertyName = "vid")]
-        public string Id { get; set; }
+        public string VehicleId { get; set; }
 
         [JsonProperty(PropertyName = "coordinate")]
         public Position Position { get; set; }
