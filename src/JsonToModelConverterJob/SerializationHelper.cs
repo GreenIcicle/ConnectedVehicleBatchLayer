@@ -11,12 +11,18 @@ namespace JsonToModelConverterJob
 {
     public static class SerializationHelper
     {
-        public static void Serialize<T>(T data, Stream stream) where T : TBase
+        public static byte[] Serialize<T>(T data) where T : TBase
         {
-            using (var thriftTransport = new TStreamTransport(null, stream))
+            using (var memStream = new MemoryStream())
+            using (var binaryReader = new BinaryReader(memStream))
+            using (var thriftTransport = new TStreamTransport(null, memStream))
             {
                 var binaryProtocol = new TBinaryProtocol(thriftTransport);
                 data.Write(binaryProtocol);
+
+                //TODO Refactor
+                memStream.Position = 0;
+                return binaryReader.ReadBytes((int)memStream.Length);
             }
         }
 

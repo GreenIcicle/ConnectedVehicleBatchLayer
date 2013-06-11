@@ -57,7 +57,7 @@ namespace JsonToModelConverterJob.Extensions
             {
                 Timestamp = message.Timestamp,
                 StatusType = isDeliveryStatusKnown ? statusType : DeliveryStatusType.OTHER,
-                AdditionalStatusInfo = isDeliveryStatusKnown ? null: message.Info
+                FallbackStatusInfo = isDeliveryStatusKnown ? null: message.Info
             };
         }
 

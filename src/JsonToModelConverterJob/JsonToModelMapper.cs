@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using JsonToModelConverterJob.Extensions;
 using Microsoft.Hadoop.MapReduce.HdfsExtras.Hdfs;
 using System.IO;
+using Microsoft.Hadoop.WebHDFS;
+using Microsoft.Hadoop.WebHDFS.Adapters;
 
 namespace JsonToModelConverterJob
 {
@@ -23,19 +25,13 @@ namespace JsonToModelConverterJob
             {
                 var delivery = group.MapToDelivery();
 
-                using(var memStream = new MemoryStream())
-                using(var binaryReader = new BinaryReader (memStream))
-                {
-                    SerializationHelper.Serialize(delivery, memStream);
-                    memStream.Position = 0;
+                var client = new WebHDFSClient(new Uri(@"http://127.0.0.1:50070/"), "Camper");
 
-                    HdfsFile.WriteAllBytes
-                        (
-                            string.Format("{0}/{1}_{2}", DirectoryPath, delivery.Vehicle.VehicleId, group.Key), 
-                            binaryReader.ReadBytes((int)memStream.Length)
-                        );
+                using (var memStream = new MemoryStream(SerializationHelper.Serialize(delivery)))
+                {
+                    var task = client.CreateFile(memStream, string.Format("{0}/{1}_{2}", DirectoryPath, delivery.Vehicle.VehicleId, group.Key));
+                    task.Wait();
                 }
-               
             }
         }
     }

@@ -10,6 +10,7 @@ namespace JsonToModelConverterJob
     {
         OTHER = 0,
         STATUS = 1,
-        SENSOR = 2
+        SENSOR = 2,
+        Alert = 3
     }
 }
