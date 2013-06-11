@@ -36,7 +36,7 @@ struct SensorData {
 	1: required Timestamp timestamp,
 	2: optional double speed,
 	3: optional double fuelLeft,
-	4: optional double odoMeter,
+	4: optional double odoMeter, // kilometers the vehicle has moved in total
 	5: optional double engineTemperature,
 	6: optional double tirePressure
 }
