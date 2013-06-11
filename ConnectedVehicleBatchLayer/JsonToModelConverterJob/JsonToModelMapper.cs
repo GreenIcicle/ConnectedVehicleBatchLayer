@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace JsonToModelConverterJob
 {
-    public class JsonToModelMapper : JsonInMapperBase<SensorMessage>
+    public class JsonToModelMapper : JsonInMapperBase<IEnumerable<Message>>
     {
-        public override void Map(SensorMessage sensorMessage, MapperContext context)
+        public override void Map(IEnumerable<Message> sensorMessages, MapperContext context)
         {
             //TODO
         }

@@ -3,6 +3,8 @@ using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using JsonToModelConverterJob;
+using System.IO;
+using System.Collections.Generic;
 
 namespace JsonToModelConverterJobTest
 {
@@ -44,7 +46,7 @@ namespace JsonToModelConverterJobTest
         public void SensorMessage_Of_Type_Sensor_Correctly_Deserialized()
         {
             //Arrange
-            var expectedMessage = new SensorMessage
+            var expectedMessage = new Message
             {
                 Type = "Sensor",
                 Id = "ZE_1000",
@@ -64,7 +66,7 @@ namespace JsonToModelConverterJobTest
             };
 
             //Act
-            var sensorMessage = JsonConvert.DeserializeObject<SensorMessage>(JsonSensorMessage);
+            var sensorMessage = JsonConvert.DeserializeObject<Message>(JsonSensorMessage);
 
             //Assert
             sensorMessage.ShouldHave().AllProperties().EqualTo(expectedMessage);
@@ -74,7 +76,7 @@ namespace JsonToModelConverterJobTest
         public void SensorMessage_Of_Type_Status_Correctly_Deserialized()
         {
             //Arrange
-            var expectedMessage = new SensorMessage
+            var expectedMessage = new Message
             {
                 Type = "Status",
                 Id = "ZE_1000",
@@ -90,7 +92,7 @@ namespace JsonToModelConverterJobTest
             };
 
             //Act
-            var sensorMessage = JsonConvert.DeserializeObject<SensorMessage>(JsonStatusMessage);
+            var sensorMessage = JsonConvert.DeserializeObject<Message>(JsonStatusMessage);
 
             //Assert
             sensorMessage.ShouldHave().AllProperties().EqualTo(expectedMessage);
