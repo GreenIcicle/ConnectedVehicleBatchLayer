@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zuehlke.ConnectedVehicles;
+using Zuehlke.Camp2013.ConnectedVehicles;
 
 namespace JsonToModelConverterJob.Extensions
 {
@@ -16,7 +16,7 @@ namespace JsonToModelConverterJob.Extensions
             if(!groupedMessages.Any())
                 return delivery;
 
-            delivery.PositionHistory = new List<Zuehlke.ConnectedVehicles.Position>();
+            delivery.PositionHistory = new List<Zuehlke.Camp2013.ConnectedVehicles.Position>();
             delivery.StatusHistory = new List<DeliveryStatus>();
 
             delivery.Vehicle = new Vehicle 
@@ -39,9 +39,9 @@ namespace JsonToModelConverterJob.Extensions
             return delivery;
         }
 
-        private static Zuehlke.ConnectedVehicles.Position MapToPosition(this Message message)
+        private static Zuehlke.Camp2013.ConnectedVehicles.Position MapToPosition(this Message message)
         {
-            return new Zuehlke.ConnectedVehicles.Position
+            return new Zuehlke.Camp2013.ConnectedVehicles.Position
             {
                 Timestamp = message.Timestamp,
                 Geolocation = message.Position.MapToGeolocation()

@@ -1,4 +1,4 @@
-namespace csharp Zuehlke.ConnectedVehicles
+namespace csharp Zuehlke.Camp2013.ConnectedVehicles
 
 // The schema uses timestamps a lot. The data is expressed
 // in integer numbers. To get a semantically correct type name,

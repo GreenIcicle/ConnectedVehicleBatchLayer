@@ -15,7 +15,7 @@ namespace JsonToModelConverterJob
 {
     public class JsonToModelMapper
     {
-        private const string DirectoryPath = "/user/Camper/output/Deliveries";
+        private const string DirectoryPath = "/user/Camper/Deliveries";
 
         public void Map(IEnumerable<Message> sensorMessages)
         {

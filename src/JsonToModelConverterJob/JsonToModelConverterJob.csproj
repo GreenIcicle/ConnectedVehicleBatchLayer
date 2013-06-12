@@ -84,7 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\thrift\gen-csharp\Zuehlke\ConnectedVehicles\*.cs">
+    <Compile Include="..\thrift\gen-csharp\Zuehlke\Camp2013\ConnectedVehicles\*.cs">
       <Link>TargetSchema\%(FileName)</Link>
     </Compile>
     <Compile Include="ConverterJob.cs" />
@@ -133,7 +133,7 @@ cd $(SolutionDir)\thrift
 $(SolutionDir)\..\tools\thrift -v --gen csharp ./ConnectedVehicleDelivery.thrift</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
+       Other similar extension points exist, see Microsoetft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
