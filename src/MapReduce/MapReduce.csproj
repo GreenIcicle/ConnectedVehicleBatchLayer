@@ -86,6 +86,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlertsPerVehicle\Job.cs" />
+    <Compile Include="AlertsPerVehicle\Mapper.cs" />
+    <Compile Include="AlertsPerVehicle\Reducer.cs" />
     <Compile Include="KmPerVehicle\Job.cs" />
     <Compile Include="KmPerVehicle\Mapper.cs" />
     <Compile Include="KmPerVehicle\Reducer.cs" />
