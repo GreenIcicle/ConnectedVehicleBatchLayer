@@ -86,6 +86,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KmPerVehicle\TsvMapper.cs" />
+    <Compile Include="KmPerVehicle\TsvReducer.cs" />
     <Compile Include="MaxSpeedPerVehicle\Job.cs" />
     <Compile Include="MaxSpeedPerVehicle\Mapper.cs" />
     <Compile Include="MaxSpeedPerVehicle\Reducer.cs" />

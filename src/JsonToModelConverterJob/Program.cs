@@ -23,13 +23,16 @@ namespace JsonToModelConverterJob
 
         private static void Process(string localPath)
         {
+            var allMessages = new List<Message>();
+            
             foreach (var file in Directory.GetFiles(localPath)) 
             {
                 var content = File.ReadAllText(file);
-                var messages = JsonConvert.DeserializeObject<IEnumerable<Message>>(content);
-                var mapper = new JsonToModelMapper();
-                mapper.Map(messages);
+                allMessages.AddRange(JsonConvert.DeserializeObject<IEnumerable<Message>>(content));
             }
+
+            var writer = new MapInputFileWriter();
+            writer.Write(allMessages);
         }
     }
 }

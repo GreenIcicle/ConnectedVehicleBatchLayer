@@ -8,7 +8,7 @@ using Thrift.Transport;
 
 namespace Zuehlke.Camp2013.ConnectedVehicles.MapReduce.KmPerVehicle
 {
-    public class Mapper : MapperBase
+    public class ThriftMapper : MapperBase
     {
         public override void Map(string inputLine, MapperContext context)
         {

@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToModelConverterJob", "JsonToModelConverterJob\JsonToModelConverterJob.csproj", "{A92422C8-B37C-4A4E-ACB5-78A2BCD2E55B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToModelConverterJobTest", "JsonToModelConverterJobTest\JsonToModelConverterJobTest.csproj", "{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3B7E55D2-C749-4A87-B26C-9CECC814C023}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -13,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3B7E55
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapReduce", "MapReduce\MapReduce.csproj", "{F905720C-E834-4C3D-A970-5E81D55A409D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToModelConverterJobTest", "JsonToModelConverterJobTest\JsonToModelConverterJobTest.csproj", "{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,14 +24,14 @@ Global
 		{A92422C8-B37C-4A4E-ACB5-78A2BCD2E55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A92422C8-B37C-4A4E-ACB5-78A2BCD2E55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A92422C8-B37C-4A4E-ACB5-78A2BCD2E55B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F905720C-E834-4C3D-A970-5E81D55A409D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F905720C-E834-4C3D-A970-5E81D55A409D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F905720C-E834-4C3D-A970-5E81D55A409D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F905720C-E834-4C3D-A970-5E81D55A409D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3EF7D02-5D52-4EAE-A734-97C902F3B7D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

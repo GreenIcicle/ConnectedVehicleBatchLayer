@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Zuehlke.Camp2013.ConnectedVehicles.MapReduce.KmPerVehicle
 {
-    public class Reducer : ReducerCombinerBase
+    public class ThriftReducer : ReducerCombinerBase
     {
         public override void Reduce(string key, IEnumerable<string> values, ReducerCombinerContext context)
         {

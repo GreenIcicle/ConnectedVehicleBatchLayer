@@ -17,7 +17,7 @@ namespace JsonToModelConverterJob
             using (var binaryReader = new BinaryReader(memStream))
             using (var thriftTransport = new TStreamTransport(null, memStream))
             {
-                var binaryProtocol = new TBinaryProtocol(thriftTransport);
+                var binaryProtocol = new TCompactProtocol(thriftTransport);
                 data.Write(binaryProtocol);
 
                 //TODO Refactor
@@ -30,7 +30,7 @@ namespace JsonToModelConverterJob
         {
             using (var thriftTransport = new TStreamTransport(stream, null))
             {
-                var binaryProtocol = new TBinaryProtocol(thriftTransport);
+                var binaryProtocol = new TCompactProtocol(thriftTransport);
 
                 var person = new T();
                 person.Read(binaryProtocol);

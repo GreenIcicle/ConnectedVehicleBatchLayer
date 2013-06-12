@@ -44,5 +44,24 @@ namespace JsonToModelConverterJob
 
         [JsonProperty(PropertyName = "pressure")]
         public double Pressure { get; set; }
+
+        /// <summary>
+        /// Serialize me into a tsv line.
+        /// </summary>
+        /// <returns></returns>
+        public string Serialize()
+        {
+            var infoArray = new object[] { 
+                VehicleId,
+                Timestamp,
+                Kilometer,
+                Temperature,
+                Pressure,
+                Position.Longitude,
+                Position.Latitude
+            };
+
+            return string.Join("\t", infoArray);
+        }
     }
 }

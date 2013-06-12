@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="ConverterJob.cs" />
     <Compile Include="Extensions\MappingExtensions.cs" />
+    <Compile Include="MapInputFileWriter.cs" />
     <Compile Include="JsonToModelMapper.cs" />
     <Compile Include="MessageType.cs" />
     <Compile Include="Position.cs" />
