@@ -13,11 +13,11 @@ using Microsoft.Hadoop.WebHDFS.Adapters;
 
 namespace JsonToModelConverterJob
 {
-    public class JsonToModelMapper : JsonInMapperBase<IEnumerable<Message>>
+    public class JsonToModelMapper
     {
         private const string DirectoryPath = "/user/Camper/output/Deliveries";
 
-        public override void Map(IEnumerable<Message> sensorMessages, MapperContext context)
+        public void Map(IEnumerable<Message> sensorMessages)
         {
             var groupedMessages = sensorMessages.GroupBy(msg => msg.DeliveryId);
 
@@ -26,12 +26,10 @@ namespace JsonToModelConverterJob
                 var delivery = group.MapToDelivery();
 
                 var client = new WebHDFSClient(new Uri(@"http://127.0.0.1:50070/"), "Camper");
+                var remotePath = string.Format("{0}/{1}_{2}", DirectoryPath, delivery.Vehicle.VehicleId, group.Key);
+                var memStream = new MemoryStream(SerializationHelper.Serialize(delivery));
 
-                using (var memStream = new MemoryStream(SerializationHelper.Serialize(delivery)))
-                {
-                    var task = client.CreateFile(memStream, string.Format("{0}/{1}_{2}", DirectoryPath, delivery.Vehicle.VehicleId, group.Key));
-                    task.Wait();
-                }
+                client.CreateFile(memStream,  remotePath).ContinueWith(tsk => memStream.Dispose());
             }
         }
     }
