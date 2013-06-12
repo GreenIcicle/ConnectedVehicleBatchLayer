@@ -80,8 +80,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Thrift">
-      <HintPath>..\packages\Hive.Sharp.Lib.1.0\lib\Thrift.dll</HintPath>
+    <Reference Include="Thrift, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Thrift.0.9.0.0\lib\net35\Thrift.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Zuehlke.Camp2013.ConnectedVehicles.MapReduce.KmPerVehicle
 {
-    public class Mapper
+    using Microsoft.Hadoop.MapReduce;
+
+    public class Mapper : MapperBase
     {
+        public override void Map(string inputLine, MapperContext context)
+        {
+            
+        }
     }
 }
