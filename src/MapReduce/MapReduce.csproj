@@ -85,6 +85,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KmPerVehicle\Job.cs" />
+    <Compile Include="KmPerVehicle\Mapper.cs" />
+    <Compile Include="KmPerVehicle\Reducer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -121,7 +124,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-    <PropertyGroup>
+  <PropertyGroup>
     <PreBuildEvent>rem Execute Thrift compiler before build so we get freshly generated files
 cd $(SolutionDir)\thrift
 $(SolutionDir)\..\tools\thrift -v --gen csharp ./ConnectedVehicleDelivery.thrift</PreBuildEvent>

@@ -14,5 +14,10 @@ namespace JsonToModelConverterJob
 
         [JsonProperty(PropertyName = "latitude")]
         public double Latitude { get; set; }
+
+        //void Test()
+        //{
+        //    HdfsFileStream file;
+        //}
     }
 }
