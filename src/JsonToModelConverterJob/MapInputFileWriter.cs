@@ -13,17 +13,31 @@ namespace JsonToModelConverterJob
 
         public void Write(IEnumerable<Message> messages)
         {
-            var sensorData = messages
-                .OrderBy(msg => msg.VehicleId)
-                .ThenBy(msg => msg.Timestamp)
-                .Select(msg => msg.Serialize());
-            var content = string.Join("\n", sensorData);
-            
+            var sensorData =
+                messages.OrderBy(msg => msg.VehicleId)
+                        .ThenBy(msg => msg.Timestamp)
+                        .Select(msg => msg.Serialize())
+                        .ToArray();
+
+            int count = 0;
+            const int chunkSize = 1000;
+            var maxIndex = (int)(Math.Ceiling(sensorData.Length / (double)chunkSize));
+
             var client = new WebHDFSClient(new Uri(@"http://127.0.0.1:50070/"), "Camper");
-            var memStream = new MemoryStream(Encoding.UTF8.GetBytes(content));
-            string remoteFile = DirectoryPath + "/SensorData";
-            var task = client.CreateFile(memStream, remoteFile);
-            task.Wait();
+
+            for (int index = 0; index < maxIndex; index++)
+            {
+                foreach (var currentChunk in sensorData.Skip(index).Take(chunkSize))
+                {
+                    var chunk = sensorData.Skip(index * chunkSize).Take(chunkSize);
+
+                    var content = string.Join("\n", chunk);
+                    var memStream = new MemoryStream(Encoding.UTF8.GetBytes(content));
+                    string remoteFile = string.Format("{0}/SensorData_{1}.tsv", DirectoryPath, index);
+                    var task = client.CreateFile(memStream, remoteFile);
+                    task.Wait();
+                }
+            }
         }
     }
 }
